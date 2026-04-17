@@ -1,19 +1,48 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Smart Speed Test</title>
+<title>Speed Wifi</title>
 <link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
   background:#0a0a0a;
   color:white;
-  font-family:Arial;
+  font-family:'Poppins', Arial, sans-serif;
   display:flex;
   justify-content:center;
   align-items:center;
   height:100vh;
+}
+
+.top-right{
+  position:fixed;
+  top:16px;
+  right:16px;
+  text-align:right;
+  font-size:13px;
+  color:#ccc;
+  line-height:1.4;
+  background:rgba(0,0,0,0.7);
+  padding:12px 16px;
+  border-radius:8px;
+  backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+.top-right a{
+  color:#4CAF50;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+
+.top-right a:hover{
+  text-decoration:underline;
 }
 
 .container{
@@ -80,6 +109,11 @@ body{
 
 <body>
 
+<div class="top-right">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/User_icon_2.svg" width="16" height="16" alt="User" style="margin-right:6px;"> Creado por <strong>Kaizeen</strong><br>
+  <img src="https://upload.wikimedia.org/wikipedia/fr/4/4f/Discord_Logo_sans_texte.svg" width="16" height="16" alt="Discord" style="margin-right:6px;"> Discord: <a href="https://discord.gg/SVFNQV95rb" target="_blank" rel="noopener noreferrer">SVFNQV95rb</a>
+</div>
+
 <div class="container">
   <div>
     <div class="value" id="val">0</div>
@@ -142,7 +176,6 @@ async function measure(){
   ];
 
   for(const baseUrl of urls){
-    setStatus('Midiendo con ' + new URL(baseUrl).host + '...');
     const speed = await measureUrl(baseUrl);
     if(speed > 0){
       return speed;
@@ -283,7 +316,7 @@ function stopTest(){
   if(results.length === 0 || maxSpeed === 0){
     setStatus('No se detectó velocidad. Intenta abrir el archivo en un servidor local o revisa tu conexión.');
   } else {
-    setStatus('Prueba finalizada.');
+    setStatus('');
   }
 
   // calculate details
