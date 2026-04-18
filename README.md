@@ -4,7 +4,7 @@ Una página simple para medir la velocidad de internet en tiempo real.
 
 ## 🌐 Ver online
 
-[https://itznobodyy.github.io/SpeedWifi/](https://ikecxyy.github.io/SpeedWifi/)
+[https://itznobodyy.github.io/SpeedWifi/](https://itznobodyy.github.io/SpeedWifi/)
 
 ## 🚀 Cómo usar
 
